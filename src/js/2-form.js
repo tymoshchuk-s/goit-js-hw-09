@@ -1,0 +1,40 @@
+const formData = { email: "", message: "" };
+
+const form = document.querySelector('.feedback-form');
+const emailEl = document.querySelector('.feedback-input');
+const messageEl = document.querySelector('.feedback-textarea')
+
+form.addEventListener('input', onFormInput)
+
+function onFormInput(event) {
+    const target = event.target;
+
+    if (target.name === 'email') {
+        formData.email = target.value
+    }
+    if (target.name === 'message') {
+        formData.message = target.value
+    }
+
+    localStorage.setItem('feedback', JSON.stringify(formData))
+}
+
+function populateForm() {
+    const newFormData = JSON.parse(localStorage.getItem('feedback'));
+ 
+    if (newFormData) {
+        emailEl.value = newFormData.email;
+        messageEl.value = newFormData.message;
+    }
+}
+
+populateForm();
+
+form.addEventListener('submit', enterSubmit) 
+
+function enterSubmit(event) {
+    event.preventDefault();
+
+    event.target.reset();
+    localStorage.removeItem('feedback')
+}

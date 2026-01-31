@@ -1,18 +1,121 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+/* #region common */
+* {
+    box-sizing: border-box;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+body {
+    width: 1440px;
+    padding: 24px 156px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 360px;
+    height: 200px;
+}
+/* #endregion */
+
+/* #region gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 24px;
+    margin: 0;   
+}
+
+.gallery-image {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+/* #endregion */
+
+/* #region form */
+.feedback-form {
+    padding-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    width: 360px;
+    height: 192px;
+}
+
+.feedback-form-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.feedback-input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    width: 360px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.feedback-textarea {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    width: 360px;
+    height: 112px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-size: 12px;
+}
+
+.feedback-input:hover, 
+.feedback-textarea:hover {
+    border: 1px solid #000;
+}
+
+.feedback-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 95px;
+    height: 40px;
+    background-color: #4e75ff;
+    color: #fff;
+}
+
+.feedback-btn:hover {
+background-color: #6c8cff;
+}
+
+
+
+
+
+/* #endregion */
