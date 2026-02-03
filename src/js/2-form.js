@@ -43,9 +43,13 @@ function enterSubmit(event) {
         alert('all fields must be filled in');
         return;
     }
+
+    console.log(formData)
    
     event.target.reset();
     localStorage.removeItem('feedback');
     formData.email = '';
     formData.message = '';
 }
+
+console.log(formData)
